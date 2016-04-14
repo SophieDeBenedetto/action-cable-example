@@ -26,6 +26,7 @@ gem 'devise', github: 'twalpole/devise', branch: 'rails5'
 
 group :development, :test do
   gem 'byebug'
+  gem 'pry'
 end
 
 group :development do

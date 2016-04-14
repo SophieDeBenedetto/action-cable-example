@@ -1,0 +1,8 @@
+<h1>Create a Chatroom on a programming topic</h1>
+
+<%= form_for @chatroom do |f| %>
+  <%= f.label :topic %>
+  <%= f.text_field :topic, class: "form-control" %>
+
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,11 @@
+<% if !@chatrooms.empty? %>
+
+  <ul>
+    
+  <% @chatrooms.each do |room| %>
+    <li><%= link_to room.slug, chatroom_path(room) %></li>
+  <% end %>
+    
+
+  </ul>
+<% end %>
