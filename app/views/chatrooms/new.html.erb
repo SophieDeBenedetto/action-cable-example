@@ -1,8 +1,17 @@
-<h1>Create a Chatroom on a programming topic</h1>
+<div class="row col-md-8 col-md-offset-2">
 
-<%= form_for @chatroom do |f| %>
-  <%= f.label :topic %>
-  <%= f.text_field :topic, class: "form-control" %>
+  <h1>Create a Chatroom on a programming topic</h1>
+    <div class="well">
+    
+      <div class="chatroom-form">
+        <%= form_for @chatroom do |f| %>
+          <div class="input-group">
+            <span class="input-group-addon">topic:</span>
+            <%= f.text_field :topic, class: "form-control"%>
+          </div>
+          <%= f.submit class: "btn btn-primary", id: "create-chatroom" %>
+        <% end %>
+      </div>
+    </div>
+</div>
 
-  <%= f.submit class: "btn btn-primary" %>
-<% end %>
