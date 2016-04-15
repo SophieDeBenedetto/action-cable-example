@@ -1,1 +1,16 @@
 <h1><%= @chatroom.topic %></h1>
+
+<div id="messages">
+  <% @chatroom.messages.each do |m| %>
+    <li><%=m.user.username%>: <%=m.content%></li>
+  <%end%>
+</div>
+
+
+<%=form_for @message, remote: true do |f|%>
+  <%= f.label :content%>
+  <%= f.text_area :content, class: "form-control" %>
+
+  <%= f.hidden_field :chatroom_id, value: @chatroom.id %>
+  <%= f.submit "send", class: "btn btn-primary" %>
+<%end%>
