@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
 
   def create
+    binding.pry
     message = Message.new(message_params)
     message.user = current_user
     message.chatroom = Chatroom.find(message_params[:chatroom_id])

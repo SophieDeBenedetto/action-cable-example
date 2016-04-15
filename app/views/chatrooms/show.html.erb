@@ -1,16 +1,20 @@
-<h1><%= @chatroom.topic %></h1>
+<div class="row col-md-8 col-md-offset-2">
+  <h1><%= @chatroom.topic %></h1>
 
-<div id="messages">
-  <% @chatroom.messages.each do |m| %>
-    <li><%=m.user.username%>: <%=m.content%></li>
-  <%end%>
+<div class="panel panel-default">
+  <div class="panel-body" id="messages">
+    <% @chatroom.messages.each do |m| %>
+      <p><strong><%=m.user.username%>:</strong> <%=m.content%></p>
+    <%end%>
+  </div>
 </div>
 
 
-<%=form_for @message, remote: true do |f|%>
-  <%= f.label :content%>
-  <%= f.text_area :content, class: "form-control" %>
+  <%=form_for @message, remote: true, authenticity_token: true do |f|%>
+    <%= f.label :your_message%>:
+    <%= f.text_area :content, class: "form-control", data: {textarea: "message"}%>
 
-  <%= f.hidden_field :chatroom_id, value: @chatroom.id %>
-  <%= f.submit "send", class: "btn btn-primary" %>
-<%end%>
+    <%= f.hidden_field :chatroom_id, value: @chatroom.id %>
+    <%= f.submit "send", class: "btn btn-primary", style: "display: none", data: {send: "message"}%>
+  <%end%>
+</div>
