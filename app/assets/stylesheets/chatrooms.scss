@@ -10,3 +10,22 @@
 #create-chatroom {
   margin-top: 5%;
 }
+
+#chatroom-index {
+  list-style: none;
+  font-size: 22px;
+  padding-left: 0px;
+}
+
+#chatroom-index > li {
+  margin-left: 0px;
+}
+
+#chatrooms {
+  text-align: center;
+  margin-top: 5%;
+}
+
+#chatroom-title {
+  text-align: center;
+}
