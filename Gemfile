@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby '2.3.0'
 gem 'rails', '>= 5.0.0.beta3', '< 5.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
@@ -23,6 +24,11 @@ gem 'redis', '~> 3.0'
 
 
 gem 'devise', github: 'twalpole/devise', branch: 'rails5'
+
+group :production do 
+  gem 'rails_12factor'
+end
+
 
 group :development, :test do
   gem 'byebug'
