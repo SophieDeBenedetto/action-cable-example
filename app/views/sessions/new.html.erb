@@ -1,15 +1,21 @@
-<h2>Log in</h2>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
 
-<%= form_for(User.new, url: login_path) do |f| %>
+    <h2 id="log-in-title">Log in</h2>
+    <div class="auth-form well">
+    <%= form_for(User.new, url: login_path) do |f| %>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true %>
+      <%=f.label :username%>
+      <div class="input-group">
+        <span class="input-group-addon">@</span>
+          <%= f.text_field :username, class: "form-control"%>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "log in", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+    </div>
+    <%= render partial: 'layouts/auth_errors'%>
   </div>
-
-  <div class="actions">
-    <%= f.submit "log in" %>
-  </div>
-<% end %>
-
-<%= render partial: 'layouts/auth_errors'%>
+</div>

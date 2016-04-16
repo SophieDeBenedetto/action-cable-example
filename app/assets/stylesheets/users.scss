@@ -1,3 +1,30 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.auth-form {
+  margin: 5%;
+  text-align: center;
+}
+
+#new_user div.input-group {
+  width: 50%;
+  margin-left: 25%;
+}
+
+.auth-form label {
+  margin-bottom: 3%;
+}
+
+.auth-form > form > div.actions {
+  margin-top: 3%;
+}
+
+.auth-form > form > div.actions input.btn {
+  width: 50%;
+}
+
+#log-in-title {
+  text-align: center;
+}
