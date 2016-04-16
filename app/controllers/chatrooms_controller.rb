@@ -1,6 +1,7 @@
 class ChatroomsController < ApplicationController
 
   def index
+    @chatroom = Chatroom.new
     @chatrooms = Chatroom.all
   end
 
@@ -13,9 +14,12 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    chatroom = Chatroom.new(chatroom_params)
-    if chatroom.save
-      redirect_to chatroom
+    @chatroom = Chatroom.new(chatroom_params)
+    if @chatroom.save
+      respond_to do |format|
+        format.html { redirect_to @chatroom }
+        format.js
+      end
     else
       render :new
     end

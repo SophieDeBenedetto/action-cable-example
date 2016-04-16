@@ -1,20 +1,14 @@
 <div class="row col-md-8 col-md-offset-2" id="chatroom-title">
-  
-<h1>Chatrooms</h1>
+  <h1>Chatrooms</h1>
 </div>
+
 <div class="row col-md-8 col-md-offset-2" id="chatrooms">
-<% if @chatrooms.any? %>
-
-  <ul id="chatroom-index"> 
-  <% @chatrooms.each do |room| %>
-    <li><%= link_to room.topic, chatroom_path(room) %></li>
+  <%= render partial: 'chatroom_form', locals: {chatroom: @chatroom} %>
+  <% if @chatrooms.any? %>
+    <ul id="chatroom-index"> 
+      <%= render @chatrooms%>
+    </ul>
+  <%else %>
+    <p>Be the first one to make a chatroom!</p>
   <% end %>
-  </ul>
-
-<%else %>
-
-  <p>Be the first one to make a chatroom!</p>
-
-<% end %>
-
 </div>
