@@ -1,10 +1,6 @@
 <ul class="nav navbar-nav">
   <% if current_user %>
    <li>
-    <%= link_to "Profile", profile_path(current_user)%>
-   </li> 
-
-   <li>
     <%= link_to "new chatroom", new_chatroom_path%>
    </li>
   <% end %>

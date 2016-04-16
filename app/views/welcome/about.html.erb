@@ -1,5 +1,8 @@
-Welcome to Chatty!
-
-<%if current_user %>
-  Hi <%= current_user.username %>
-<%end %>
+<div class="jumbotron">
+  <h1>Welcome to Chatty!</h1>
+  <p>The Rails 5 + Action Cable example app</p>
+  <%if current_user%>
+    <p><span class="glyphicon glyphicon-heart"></span> Nice to see you, <%= current_user.username%> <span class="glyphicon glyphicon-heart"></span></p>
+  <%end%>
+  <p>Sign up or log in, then create a chatroom or browse existing rooms to start chatting.</p>
+</div>
