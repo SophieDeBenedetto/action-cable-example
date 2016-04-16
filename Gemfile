@@ -23,7 +23,6 @@ gem 'redis', '~> 3.0'
 
 
 
-gem 'devise', github: 'twalpole/devise', branch: 'rails5'
 
 group :production do 
   gem 'rails_12factor'
