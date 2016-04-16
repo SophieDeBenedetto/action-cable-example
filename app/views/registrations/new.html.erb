@@ -1,0 +1,15 @@
+<h2>Sign up</h2>
+
+<%= form_for(@user, url: signup_path) do |f| %>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render partial: 'layouts/auth_errors'%>

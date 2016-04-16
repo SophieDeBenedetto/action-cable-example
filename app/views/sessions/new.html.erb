@@ -1,0 +1,15 @@
+<h2>Log in</h2>
+
+<%= form_for(User.new, url: login_path) do |f| %>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "log in" %>
+  </div>
+<% end %>
+
+<%= render partial: 'layouts/auth_errors'%>
