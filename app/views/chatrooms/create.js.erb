@@ -1,2 +1,2 @@
 $("input#chatroom_topic").val(" ")
-$("#chatroom-errors").html('<li><%= link_to @chatroom.topic, chatroom_path(@chatroom) %></li>')
+$("#chatroom-index").append('<li><%= link_to @chatroom.topic, chatroom_path(@chatroom) %></li>')

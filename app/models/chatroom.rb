@@ -2,8 +2,8 @@ class Chatroom < ApplicationRecord
   has_many :messages
   has_many :users, through: :messages
   validates :topic, presence: true, uniqueness: true, case_sensitive: false
+  before_validation :sanitize, :slugify
 
-  before_create :slugify
 
   def to_param
     self.slug
@@ -11,5 +11,9 @@ class Chatroom < ApplicationRecord
 
   def slugify
     self.slug = self.topic.downcase.gsub(" ", "-")
+  end
+
+  def sanitize
+    self.topic = self.topic.strip
   end
 end
