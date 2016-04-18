@@ -7,11 +7,11 @@
   <div id="chatroom-errors">
     
   </div>
-  <% if @chatrooms.any? %>
     <ul id="chatroom-index"> 
+  <% if @chatrooms.any? %>
       <%= render @chatrooms%>
-    </ul>
   <%else %>
+    </ul>
     <p>Be the first one to make a chatroom!</p>
   <% end %>
 </div>
