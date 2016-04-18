@@ -1,2 +1,2 @@
 $("input#chatroom_topic").val(" ");
-$(".chatroom-form").append("<br><%=j render partial: 'layouts/flash_errors', locals: {flash: flash}%>");
+$("#chatroom-errors").html("<br><%=j render partial: 'layouts/flash_errors', locals: {flash: flash}%>");

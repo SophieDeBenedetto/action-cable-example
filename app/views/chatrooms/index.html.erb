@@ -4,6 +4,9 @@
 
 <div class="row col-md-8 col-md-offset-2" id="chatrooms">
   <%= render partial: 'chatroom_form', locals: {chatroom: @chatroom} %>
+  <div id="chatroom-errors">
+    
+  </div>
   <% if @chatrooms.any? %>
     <ul id="chatroom-index"> 
       <%= render @chatrooms%>
