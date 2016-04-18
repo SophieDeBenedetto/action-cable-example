@@ -6,8 +6,9 @@ class ChatroomsController < ApplicationController
   end
 
   def new
-    binding.pry
-    # if request.referrer ==
+    if request.referrer.split("/").last == "chatrooms"
+      flash[:notice] = nil
+    end
     @chatroom = Chatroom.new
   end
 
