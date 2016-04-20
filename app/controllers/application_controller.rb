@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def authenticate_user!
-    !!current_user
+    redirect_to root_path unless logged_in?
   end
 end
