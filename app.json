@@ -9,6 +9,5 @@
   },
   "addons": [
     "redistogo",
-    "mongolab:shared-single-small"
   ]
 }
