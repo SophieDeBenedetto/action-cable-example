@@ -3,7 +3,7 @@
 
 production:
   adapter: redis
-  url: ENV["REDISTOGO_URL"]
+  url: "#{ENV['REDISTOGO_URL']}"
 
 development:
   adapter: async
