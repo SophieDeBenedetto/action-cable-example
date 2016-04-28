@@ -3,7 +3,7 @@
 
 production:
   adapter: redis
-  url: redis://redistogo:d0ed635634356d4408c1effb00bc9493@hoki.redistogo.com:9247/
+  url: ENV["REDISTOGO_URL"]
 
 development:
   adapter: async
