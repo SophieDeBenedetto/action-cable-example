@@ -7,6 +7,5 @@
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"
   },
-  "addons": ["redistogo"],
-  "scripts": {"postdeploy": "bundle exec rake setup"}
+  "addons": ["redistogo"]
 }
