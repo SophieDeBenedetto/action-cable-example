@@ -7,5 +7,6 @@
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"
   },
-  "addons": ["redistogo"]
+  "addons": ["redistogo"],
+  "scripts": {"postdeploy": "bundle exec rake set_production_socket_url"}
 }
