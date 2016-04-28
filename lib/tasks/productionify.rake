@@ -6,6 +6,6 @@ end
 
 
 task :setup do 
-  system 'bundle exec rake db:migrate'
-  set_production_socket_url
+  Rake::Task["db:migrate"].invoke
+  Rake::Task["set_production_socket_url"].invoke
 end
