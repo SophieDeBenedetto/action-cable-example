@@ -3,3 +3,9 @@ task :set_production_socket_url do
   url = File.read('web_url.txt').strip
   system "heroku config:set PRODUCTION_URL=#{url}"
 end
+
+
+task :setup do 
+  system 'bundle exec rake db:migrate'
+  set_production_socket_url
+end
