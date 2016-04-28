@@ -19,6 +19,6 @@ Then, once you clone down this repo:
 * `bundle install`
 * `rake db:create; rake db:migrate`
 
-And you're all set!
+And you're all set.
 
 
