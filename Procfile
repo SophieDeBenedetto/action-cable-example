@@ -1,1 +1,1 @@
-web: export HEROKU_URL=$HEROKU_APP_NAME && bundle exec puma -p $PORT 
+web: bundle exec puma -p $PORT 
