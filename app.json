@@ -5,7 +5,7 @@
   "keywords": ["rails 5", "action cable", "websockets"],
   "success_url": "/",
   "scripts": {
-    "postdeploy": "bundle exec rake setup"
+    "postdeploy": "bundle exec rake db:migrate"
   },
   "addons": ["redistogo"]
 }
