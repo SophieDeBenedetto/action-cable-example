@@ -4,5 +4,5 @@ end
 
 task :setup do 
   Rake::Task["db:migrate"].invoke
-  Rake::Task["set_production_url".invoke
+  Rake::Task["set_production_url"].invoke
 end
