@@ -7,5 +7,5 @@
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"
   },
-  "addons": ["heorku-redis"]
+  "addons": ["heroku-redis"]
 }
