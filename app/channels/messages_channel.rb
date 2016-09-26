@@ -3,12 +3,8 @@ class MessagesChannel < ApplicationCable::Channel
     stream_from 'messages'
   end
 
-  def transmit(payload)
-    binding.pry
-    ActionCable.server.broadcast('messages', {message: payload["message"]})
+  def receive(payload)
+    Message.create(user: current_user, chatroom_id: 1, content: payload["message"])
 
-    # Message.create(user: current_user, chatroom_id: 1, content: payload["message"])
-    # create message
-    # broadcast message
   end
 end  
