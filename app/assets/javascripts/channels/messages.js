@@ -1,7 +1,7 @@
 App.messages = App.cable.subscriptions.create('MessagesChannel', {  
   received: function(data) {
     $("#messages").removeClass('hidden')
-    return $('#messages').append(data.message);
+    return $("[data-chatroom='" + data.chatroom_id + "']").append(data.message);
   }
 });
 
@@ -12,7 +12,9 @@ $(document).on('turbolinks:load', function() {
 function submitNewMessage(){
   $('textarea#message_content').keydown(function(event) {
     if (event.keyCode == 13) {
-        App.messages.send({message: event.target.value})
+        var msg = event.target.value
+        var chatroomId = $("[data-chatroom]").data().chatroom
+        App.messages.send({message: msg, chatroom_id: chatroomId})
         $('[data-textarea="message"]').val(" ")
         return false;
      }
