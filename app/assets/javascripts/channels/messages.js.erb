@@ -1,0 +1,33 @@
+$(document).on('turbolinks:load', function() {
+  submitNewMessage();
+});
+
+
+
+<% Chatroom.all.each do |chatroom| %>  
+
+  App['room' + <%=chatroom.id%>] = App.cable.subscriptions.create({channel: 'MessagesChannel', room: <%=chatroom.id%>}, {  
+  received: function(data) {
+   $("[data-chatroom='" + this.chatroomId + "']").removeClass('hidden')
+    return $("[data-chatroom='" + this.chatroomId + "']").append(data.message);
+  },
+
+  setChatroomId: function(chatroomId) {
+    this.chatroomId = chatroomId
+  }
+});
+
+<% end %>
+
+function submitNewMessage(){
+  $('textarea#message_content').keydown(function(event) {
+    if (event.keyCode == 13) {
+        var msg = event.target.value
+        var chatroomId = $("[data-chatroom]").data().chatroom
+        App['room' + chatroomId].setChatroomId(chatroomId)
+        App['room' + chatroomId].send({message: msg, chatroom_id: chatroomId})
+        $('[data-textarea="message"]').val(" ")
+        return false;
+     }
+  });
+}

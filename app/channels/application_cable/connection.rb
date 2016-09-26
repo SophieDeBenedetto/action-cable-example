@@ -5,7 +5,6 @@ module ApplicationCable
  
     def connect
       self.current_user = User.first
-      # find_verified_user
     end
  
     protected
