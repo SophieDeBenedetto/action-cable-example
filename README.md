@@ -6,6 +6,8 @@ For a walk-through of this application, and to learn more about Action Cable (it
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
+To view an implementation of this project that uses multipe subscriptions to multiple chatrooms, check out this [repo](https://github.com/SophieDeBenedetto/rails-5-action-cable-meetup)
+
 ### Running Locally
 
 You'll need:
