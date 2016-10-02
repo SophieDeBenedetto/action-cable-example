@@ -1,7 +1,7 @@
 class Chatroom < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :users, through: :messages
-  validates :topic, presence: true, uniqueness: true, case_sensitive: false
+  validates :topic, presence: true, uniqueness: { case_sensitive: false }
   before_validation :sanitize, :slugify
 
 
